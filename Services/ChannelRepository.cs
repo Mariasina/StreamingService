@@ -3,30 +3,36 @@ namespace MyWebAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using Repositories;
 
 public class ChannelRepository : IChannelRepository
 {
-    public Task<Channel> Add(Channel channel)
+    readonly StreamingContext ctx;
+    public ChannelRepository(StreamingContext context)
+        => ctx = context;
+
+    public async Task<Channel> Add(Channel channel)
     {
-        throw new NotImplementedException();
+        await ctx.AddAsync(channel);
+        await ctx.SaveChangesAsync();
+        return channel;
     }
 
-    public Task<Channel> Delete(Guid guid)
+    public async Task<Channel> Delete(Guid guid)
     {
-        throw new NotImplementedException();
+        await ctx.Remove();
     }
 
-    public Task<Channel?> GetById(Guid guid)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<Channel?> GetById(Guid guid)
+        => await ctx.Channels.FindAsync(guid);
 
-    public Task<IEnumerable<Channel>> GetChannels(int pageIndex, int pageSize)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<IEnumerable<Channel>> GetChannels(int pageIndex, int pageSize)
+        => await ctx.Channels
+            .Skip((pageIndex - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
 
 
 }
