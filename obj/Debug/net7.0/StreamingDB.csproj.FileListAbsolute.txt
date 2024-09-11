@@ -1,0 +1,5 @@
+C:\Users\disrct\Desktop\Maria Carolina\StreamingDB\obj\Debug\net7.0\StreamingDB.csproj.AssemblyReference.cache
+C:\Users\disrct\Desktop\Maria Carolina\StreamingDB\obj\Debug\net7.0\StreamingDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\disrct\Desktop\Maria Carolina\StreamingDB\obj\Debug\net7.0\StreamingDB.AssemblyInfoInputs.cache
+C:\Users\disrct\Desktop\Maria Carolina\StreamingDB\obj\Debug\net7.0\StreamingDB.AssemblyInfo.cs
+C:\Users\disrct\Desktop\Maria Carolina\StreamingDB\obj\Debug\net7.0\StreamingDB.csproj.CoreCompileInputs.cache
